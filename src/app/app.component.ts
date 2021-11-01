@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-profile';
+  isFixedNavbar:any;
+ @HostBinding('class.navbar-opened') navbarOpened = false;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+
+  loadMenuBurger(){
+    var x = document.getElementById("myTopnav");
+    if(x?.className === "topnav"){
+       x.className += " responsive";
+      }else{
+        x!.className = " topnav";
+      }
+  }
 }
