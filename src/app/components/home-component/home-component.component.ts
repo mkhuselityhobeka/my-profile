@@ -12,4 +12,16 @@ export class HomeComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //open chat form
+   openChatForm() {
+    document.getElementById("myForm")!.style.display="block"
+    
+  }
+  //open chat form
+  closeChatForm() {
+
+    document.getElementById("myForm")!.style.display="none"
+    
+  }
+
 }

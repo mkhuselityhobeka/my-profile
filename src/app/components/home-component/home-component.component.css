@@ -362,6 +362,10 @@ img{
 }
 
 /*
+ button open form
+*/
+
+/*
  pop chat - hidden
 */
 .chat-popup{
@@ -386,6 +390,31 @@ img{
   border: none;
   background-color: white;
   min-height: 200px;
+}
+/* When the textarea gets focus, do something */
+.form-container textarea:focus{
+  background-color: #ddd;
+  outline: none;
+}
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }
 #images{
     text-align:center;
