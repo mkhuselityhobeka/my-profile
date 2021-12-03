@@ -271,7 +271,7 @@ img{
   .g-4,
   .gx-4 {
     --bs-gutter-x: 1.5rem;
-  }
+  } 
   
   .g-4,
   .gy-4 {
@@ -288,7 +288,105 @@ img{
     --bs-gutter-y: 3rem;
   }
   
-.img-fluid{
+  .img-fluid {
+    display: inline-flex;
     max-width: 100%;
     height: auto;
+  }
+  
+  .img-thumbnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 0.125rem solid #dee2e6;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .figure {
+    display: inline-block;
+  }
+  
+  .figure-img {
+    margin-bottom: 0.5rem;
+    line-height: 1;
+  }
+  
+  .figure-caption {
+    font-size: 0.875em;
+    color: #6c757d;
+  }
+  .fblogo {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 180px; 
+}
+.chat-btn{
+  position: absolute;
+  right: 14px;
+  bottom: 30px;
+  cursor: pointer
+}
+.chat-btn .close{
+  display: none
+}
+.chat-btn i {
+  transition: all 0.9s ease;
+}
+#check:checked~.chat-btn i {
+  display:block;
+  pointer-events: auto;
+  transform-origin: rotate(180deg);
+}
+#check:checked~.chat-btn .comment{
+  display: none
+}
+.chat-btn i{
+  font-size: 22px;
+  color: #fff !important
+}
+.chat-btn{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: blue;
+  color: #fff;
+  font-size: 22px;
+  border: none;
+
+}
+
+/*
+ pop chat - hidden
+*/
+.chat-popup{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+/* styling form container*/
+.form-container{
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+/* chat text area */
+.form-container textarea{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background-color: white;
+  min-height: 200px;
+}
+#images{
+    text-align:center;
 }
