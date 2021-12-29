@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailTemplateDTO } from 'src/app/data/EmailTemplate';
+import { EmailServicesService } from 'src/app/services/email-services.service';
 
 @Component({
   selector: 'app-home-component',
@@ -7,11 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponentComponent implements OnInit {
 
-  constructor() { }
+  emailTemplate: EmailTemplateDTO = new EmailTemplateDTO();
+  submitted = false;
+
+
+
+  constructor(private emailServicesService: EmailServicesService) { }
 
   ngOnInit(): void {
   }
-
+//send email contact form section
+  postmailMessage(){
+    this.emailServicesService.sendMail(this.emailTemplate).subscribe(data =>{
+      console.log(data)
+      this.emailTemplate = new EmailTemplateDTO();
+    },
+    error => console.log(error));
+  }
   //open chat form
    openChatForm() {
     document.getElementById("myForm")!.style.display="block"
@@ -19,9 +33,7 @@ export class HomeComponentComponent implements OnInit {
   }
   //open chat form
   closeChatForm() {
-
     document.getElementById("myForm")!.style.display="none"
-    
   }
 
 }

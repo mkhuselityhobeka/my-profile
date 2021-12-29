@@ -126,28 +126,28 @@
         <div class="col-sm-10">
             <form id="emailForm">
                 <div class="col-sm-5">
-                     <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required"/>
+                     <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" [(ngModel)]="emailTemplate.name"/>
                         <div class="invalid-feedback" data-sb-feedback="name:required">Name is required</div>
                  </div><br>
                  <div class="col-sm-5">
-                      <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required"/>
+                      <input class="form-control" id="email" name="email" type="text" placeholder="Enter your email..." data-sb-validations="required" [(ngModel)]="emailTemplate.email"/>
                     <div class="invalid-feedback" data-sb-feedback="name:required">Email Address is required</div>
                 </div><br>
                   <div class="col-sm-5">
-                         <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required"/>
+                         <input class="form-control" id="subject" name="subject" type="text" placeholder="Enter your subject..." data-sb-validations="required" [(ngModel)]="emailTemplate.subject"/>
                          <div class="invalid-feedback" data-sb-feedback="name:required">hone Number is required</div>
                 </div><br>
                 <div class="col-sm-5">
-                    <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                    <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" [(ngModel)]="emailTemplate.message"></textarea>
                     <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                  </div><br>
-                <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button>
+                <button class="btn btn-primary btn-xl" id="submitButton" type="submit" (click)="postmailMessage()">Submit</button>
             </form>
             <br>
         </div>
     </div>
     <!--chat form-->
-    <div class="chat-popup" id="myForm">
+    <div class="chat-popup" id="myForm" style="width: ;">
         <form action="/action_page.php" class="form-container">
             <h1>Let's Chat</h1>
             <label for="msg"><b>Message</b></label>
