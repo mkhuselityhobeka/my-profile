@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailTemplateDTO } from 'src/app/data/EmailTemplate';
 import { EmailServicesService } from 'src/app/services/email-services.service';
+import { ResumeServiceService } from 'src/app/services/resume-service.service';
 
 @Component({
   selector: 'app-home-component',
@@ -14,7 +15,7 @@ export class HomeComponentComponent implements OnInit {
 
 
 
-  constructor(private emailServicesService: EmailServicesService) { }
+  constructor(private emailServicesService: EmailServicesService, private resumeService:ResumeServiceService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,11 @@ export class HomeComponentComponent implements OnInit {
       this.emailTemplate = new EmailTemplateDTO();
     },
     error => console.log(error));
+  }
+
+  // display resume
+  displayResume(){
+    this.resumeService.displayResume()
   }
   //open chat form
    openChatForm() {

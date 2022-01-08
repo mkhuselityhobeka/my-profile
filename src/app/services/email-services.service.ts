@@ -15,4 +15,5 @@ export class EmailServicesService {
   sendMail(emailTemplateDTO : Object): Observable<Object>{
     return this.httpClient.post(`${this.baseurl}`, emailTemplateDTO);
   }
+  
 }
