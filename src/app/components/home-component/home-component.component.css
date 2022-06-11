@@ -419,3 +419,13 @@ img{
 #images{
     text-align:center;
 }
+
+/*center email form*/
+.containerForm{
+  display: inline-flexbox;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+ 
+}

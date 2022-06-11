@@ -98,7 +98,7 @@
                         <div class="card" style="width: 20rem;">
                             <img src="assets/img/spring-boot.jpg" class="card-img-top" alt="..." style="width: 200px;">
                             <div class="card-body">
-                                <h5 class="card-title"> Spring Boot </h5>
+                                <h5 class="card-title"></h5>
                                <!-- <p class="card-text">I am have developed some prodcution ready spring boot applications and APIs with the following tools<br><br> * Spring Data JPA <br> * Spring boot Actuator <br> * REST <br> * SOAP <br> * Swagger\OpenAPI <br> * JUnit\Mockito</p>-->
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                         <div class="card" style="width: 18rem;">
                             <img src="assets/img/android.jpg" class="card-img-top" alt="..." style="width: 200px;">
                             <div class="card-body">
-                                <h5 class="card-title">Android</h5>
+                                <h5 class="card-title"></h5>
                                 <!--<p class="card-text">I have worked on android applications</p>-->
                             </div>
                         </div><br>                      
@@ -114,6 +114,30 @@
                 </div>
               
                 <div class="carousel-item" data-bs-interval="2000">
+                    <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+                        <div class="card" style="width: 20rem;">
+                            <img src="assets/img/jenkins.png" class="card-img-top" alt="..." style="width: 200px;">
+                            <div class="card-body">
+                            <!--<p class="card-text">I am skilled in Java software development</p>-->
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="card" style="width: 18rem;">
+                            <img src="assets/img/git.png" class="card-img-top" alt="..." style="width: 200px;">
+                            <div class="card-body">
+                            <!--<p class="card-text">I am skilled in Java software development</p>-->
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="card" style="width: 18rem;">
+                            <img src="assets/img/docker.png" class="card-img-top" alt="..." style="width: 200px;">
+                            <div class="card-body">
+                            <!--<p class="card-text">I am skilled in Java software development</p>-->
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="carousel-item" data-bs-interval="2000">
                     <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
                         <div class="card" style="width: 20rem;">
                             <img src="assets/img/IIB.png" class="card-img-top" alt="..." style="width: 300px;">
@@ -136,7 +160,7 @@
                             </div>
                         </div>
                     </div>
-            </div>
+                 </div>
                 
             </div>  
             <br><br><br><br>
@@ -147,46 +171,100 @@
 <!--Contact-->
 <br>
 <div class="page-section bg-secondary" id="contact">
-    <h2 class="page-section-heading text-center text-white text-uppercase text-secondary mb-0"> Contact Me</h2><br>
-    <div class="col justify-content-left">
-        <div class="col-sm-10">
-            <form id="emailForm">
-                <div class="col-sm-5">
+    <h2 class="page-section-heading text-center text-white text-uppercase text-secondary mb-0"> Pop Me A Mail</h2><br>
+    <!--center form div-->
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="col-sm-5 ">
+            <form id="emailForm text-center ">
+                <div class="col-sm-10" align-text="align-items-center">
                      <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" [(ngModel)]="emailTemplate.name"/>
                         <div class="invalid-feedback" data-sb-feedback="name:required">Name is required</div>
                  </div><br>
-                 <div class="col-sm-5">
+                 <div class="col-sm-10">
                       <input class="form-control" id="email" name="email" type="text" placeholder="Enter your email..." data-sb-validations="required" [(ngModel)]="emailTemplate.email"/>
                     <div class="invalid-feedback" data-sb-feedback="name:required">Email Address is required</div>
                 </div><br>
-                  <div class="col-sm-5">
-                         <input class="form-control" id="subject" name="subject" type="text" placeholder="Enter your subject..." data-sb-validations="required" [(ngModel)]="emailTemplate.subject"/>
-                         <div class="invalid-feedback" data-sb-feedback="name:required">hone Number is required</div>
+                  <div class="col-sm-10">
+                    <select class="form-control" id="subject" name="subject" data-bs-toggle="dropdown" data-sb-validations="required" [(ngModel)]="emailTemplate.subject">
+                        <option value="1" disabled>Choose Subject...</option>
+                        <option value="2" selected>Feedback</option>
+                        <option value="3">Bug Fix</option>
+                        <option value="4">Feature</option>
+                      </select>
                 </div><br>
-                <div class="col-sm-5">
+                <div class="col-sm-10">
                     <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" [(ngModel)]="emailTemplate.message"></textarea>
                     <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                  </div><br>
-                <button class="btn btn-primary btn-xl" id="submitButton" type="submit" (click)="postmailMessage()">Submit</button>
+                <button class="btn btn-xl btn-outline-light col-sm-10" id="submitButton" type="submit" (click)="postmailMessage()">Submit</button>
             </form>
             <br>
         </div>
-    </div>
-    <!--chat form-->
-    <div class="chat-popup" id="myForm" style="width: ;">
-        <form action="/action_page.php" class="form-container">
-            <h1>Let's Chat</h1>
-            <label for="msg"><b>Message</b></label>
-            <textarea placeholder="type message here ..." name="msg" required></textarea>
-            <button type="button" class="btn btn-outline-success">Send</button>
-            <button type="button" class="btn cancel" (click)="closeChatForm()">Close</button>
-        </form>
-    </div>
-    <div style="position: fixed; bottom: 0;right: 0;">
-        <p>
-            <i class='fas fa-comment-dots' style='font-size:48px;color:blue;'(click)="openChatForm()"></i>
-        </p>
-    </div>
-    
+    </div>  
 </div>
+<div class="row">
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section
+      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    >
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Lets connect on social networks</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+         
+          <!-- Grid column -->
+          <div class="row mt-3">
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contact
+            </h6>
+            <p><i class="fas fa-home me-3"></i> Unit 09 Rose Complex, Olievehoutbotch, Centurion</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              mkhuselityhobeka@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 27 834876291</p>
+            <p><i class="fas fa-phone me-3"></i> + 27 735445339</p>
+          </div>
+          <!-- Grid column -->
+          </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2022 Mkhuseli Tyhobeka
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
+
 </html>
