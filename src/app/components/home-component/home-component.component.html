@@ -175,13 +175,12 @@
                     <div class="invalid-feedback" data-sb-feedback="name:required">Email Address is required</div>
                 </div><br>
                   <div class="col-sm-10">
-                    <select class="bootstrap-select" id="subject" name="subject" data-bs-toggle="dropdown" data-sb-validations="required" [(ngModel)]="emailTemplate.subject">
-                        <option value="1" selected="selected">Feature 1</option>
-                        <option value="2">Feature 2</option>
-                        <option value="3">Feature 3</option>
-                        <option value="4">Feature 4</option>
+                    <select class="form-control" id="subject" name="subject" data-bs-toggle="dropdown" data-sb-validations="required" [(ngModel)]="emailTemplate.subject">
+                        <option value="" selected>Choose Subject...</option>
+                        <option value="">Feedback</option>
+                        <option value="">Bug Report</option>
+                        <option value="">Advise Feature</option>
                       </select>
-                      
                 </div><br>
                 <div class="col-sm-10">
                     <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" [(ngModel)]="emailTemplate.message"></textarea>
